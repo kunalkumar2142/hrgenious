@@ -1,0 +1,2 @@
+-- Seed data will be inserted via JPA or Flyway - placeholder for Day 2
+-- Default users (password: Admin@123 / Hr@123 encrypted with BCrypt) will be added by DataLoader

@@ -1,0 +1,39 @@
+# Java / Maven
+backend/target/
+backend/.mvn/
+*.class
+*.jar
+*.war
+*.log
+.mvn/wrapper/maven-wrapper.jar
+
+# Node / Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/coverage/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.settings/
+.classpath
+.project
+.factorypath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+*.env.local
+application-local.properties
+
+# Oracle
+oradata/
+
+# Logs
+logs/
+npm-debug.log*
