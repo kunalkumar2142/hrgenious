@@ -1,0 +1,37 @@
+<h2>Employee Management</h2>
+<button (click)="showForm = !showForm">{{showForm ? 'Close' : 'Add Employee'}}</button>
+
+<div *ngIf="showForm" style="border:1px solid #ccc; padding:15px; margin:15px 0;">
+  <h3>{{formData.id ? 'Edit' : 'Add'}} Employee</h3>
+  <input [(ngModel)]="formData.empCode" placeholder="Employee Code" />
+  <input [(ngModel)]="formData.firstName" placeholder="First Name" />
+  <input [(ngModel)]="formData.lastName" placeholder="Last Name" />
+  <input [(ngModel)]="formData.email" placeholder="Email" />
+  <input [(ngModel)]="formData.phone" placeholder="Phone" />
+  <input [(ngModel)]="formData.designation" placeholder="Designation" />
+  <input type="date" [(ngModel)]="formData.doj" />
+  <select [(ngModel)]="formData.departmentId">
+    <option value="">Select Department</option>
+    <option *ngFor="let d of departments" [value]="d.id">{{d.name}}</option>
+  </select>
+  <br><br>
+  <button (click)="save()">Save</button>
+</div>
+
+<table border="1" cellpadding="8" style="width:100%; margin-top:15px; border-collapse: collapse;">
+  <tr>
+    <th>Code</th><th>Name</th><th>Email</th><th>Designation</th><th>Department</th><th>Action</th>
+  </tr>
+  <tr *ngFor="let e of employees">
+    <td>{{e.empCode}}</td>
+    <td>{{e.firstName}} {{e.lastName}}</td>
+    <td>{{e.email}}</td>
+    <td>{{e.designation}}</td>
+    <td>{{e.department?.name}}</td>
+    <td>
+      <button (click)="edit(e)">Edit</button>
+      <button (click)="remove(e.id)">Delete</button>
+    </td>
+  </tr>
+</table>
+<p *ngIf="employees.length==0">No employees yet, add one</p>
