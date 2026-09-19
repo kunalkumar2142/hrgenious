@@ -32,15 +32,6 @@ ng serve --port 4200
 # App: http://localhost:4200
 ```
 
-## Branches & Phases (8-10 Days)
-- `feature/setup` (Day 1-2) - Project scaffold, Docker, Auth skeleton - CURRENT
-- `feature/employee` (Day 3) - Employee CRUD
-- `feature/recruitment` (Day 4) - Recruitment & Onboarding
-- `feature/attendance-leave` (Day 5) - Attendance/Leave
-- `feature/payroll-performance` (Day 6-7) - Payroll + Performance
-- `feature/analytics` (Day 8) - Dashboard & Reports
-- `release/v1.0` (Day 9-10) - Testing & Deployment
-
 ## Default Credentials (Seed Data)
 - Admin: admin@hrgenius.com / Admin@123
 - HR Manager: hr@hrgenius.com / Hr@123
