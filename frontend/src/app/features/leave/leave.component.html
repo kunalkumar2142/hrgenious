@@ -1,0 +1,44 @@
+<h2>Leave & Attendance</h2>
+
+<h3>Apply Leave</h3>
+<select [(ngModel)]="form.employeeId">
+  <option value="">Select Employee</option>
+  <option *ngFor="let e of employees" [value]="e.id">{{e.firstName}} {{e.lastName}}</option>
+</select>
+<select [(ngModel)]="form.leaveType">
+  <option value="">Type</option><option>CASUAL</option><option>SICK</option><option>EARNED</option>
+</select>
+<input type="date" [(ngModel)]="form.fromDate" />
+<input type="date" [(ngModel)]="form.toDate" />
+<input [(ngModel)]="form.reason" placeholder="Reason" />
+<button (click)="apply()">Apply</button>
+
+<table border="1" cellpadding="6" style="width:100%; margin-top:10px; border-collapse: collapse;">
+  <tr><th>Employee</th><th>Type</th><th>From-To</th><th>Reason</th><th>Status</th><th>Action</th></tr>
+  <tr *ngFor="let l of leaves">
+    <td>{{l.employee?.firstName}} {{l.employee?.lastName}}</td><td>{{l.leaveType}}</td><td>{{l.fromDate}} to {{l.toDate}}</td><td>{{l.reason}}</td><td>{{l.status}}</td>
+    <td>
+      <button (click)="updateStatus(l.id, 'APPROVED')">Approve</button>
+      <button (click)="updateStatus(l.id, 'REJECTED')">Reject</button>
+    </td>
+  </tr>
+</table>
+
+<h3 style="margin-top:20px;">Mark Attendance</h3>
+<select [(ngModel)]="attForm.employeeId">
+  <option value="">Select Employee</option>
+  <option *ngFor="let e of employees" [value]="e.id">{{e.firstName}}</option>
+</select>
+<input type="date" [(ngModel)]="attForm.date" />
+<select [(ngModel)]="attForm.status">
+  <option>PRESENT</option><option>ABSENT</option><option>WFH</option><option>LEAVE</option>
+</select>
+<input type="time" [(ngModel)]="attForm.checkIn" /> <input type="time" [(ngModel)]="attForm.checkOut" />
+<button (click)="mark()">Mark</button>
+
+<table border="1" cellpadding="6" style="width:100%; margin-top:10px; border-collapse: collapse;">
+  <tr><th>Employee</th><th>Date</th><th>Status</th><th>In-Out</th></tr>
+  <tr *ngFor="let a of attendance">
+    <td>{{a.employee?.firstName}}</td><td>{{a.date}}</td><td>{{a.status}}</td><td>{{a.checkIn}} - {{a.checkOut}}</td>
+  </tr>
+</table>
