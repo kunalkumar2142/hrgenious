@@ -1,0 +1,21 @@
+<h2>Payroll</h2>
+
+<h3>Run Payroll</h3>
+<select [(ngModel)]="form.employeeId">
+  <option value="">Select Employee</option>
+  <option *ngFor="let e of employees" [value]="e.id">{{e.firstName}} {{e.lastName}} - {{e.empCode}}</option>
+</select>
+<input [(ngModel)]="form.month" placeholder="Month (2026-04)" />
+<input type="number" [(ngModel)]="form.basic" placeholder="Basic" />
+<input type="number" [(ngModel)]="form.hra" placeholder="HRA" />
+<input type="number" [(ngModel)]="form.allowance" placeholder="Allowance" />
+<input type="number" [(ngModel)]="form.deductions" placeholder="Deductions" />
+<button (click)="run()">Run Payroll</button>
+
+<table border="1" cellpadding="6" style="width:100%; margin-top:15px; border-collapse: collapse;">
+  <tr><th>Employee</th><th>Month</th><th>Basic+HRA+Allowance</th><th>Deductions</th><th>Net Salary</th><th>Status</th></tr>
+  <tr *ngFor="let p of payrolls">
+    <td>{{p.employee?.firstName}} {{p.employee?.lastName}}</td><td>{{p.month}}</td>
+    <td>{{p.basic}} + {{p.hra}} + {{p.allowance}}</td><td>{{p.deductions}}</td><td><b>{{p.netSalary}}</b></td><td>{{p.status}}</td>
+  </tr>
+</table>
