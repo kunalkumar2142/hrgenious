@@ -1,0 +1,21 @@
+<h2>Performance Review</h2>
+
+<h3>Add Review</h3>
+<select [(ngModel)]="form.employeeId">
+  <option value="">Select Employee</option>
+  <option *ngFor="let e of employees" [value]="e.id">{{e.firstName}} {{e.lastName}}</option>
+</select>
+<input [(ngModel)]="form.period" placeholder="Period (2026-Q1)" />
+<input type="number" [(ngModel)]="form.rating" placeholder="Rating 1-5" min="1" max="5" />
+<input [(ngModel)]="form.goals" placeholder="Goals" />
+<input [(ngModel)]="form.feedback" placeholder="Feedback" />
+<input [(ngModel)]="form.reviewerName" placeholder="Reviewer" />
+<button (click)="add()">Add Review</button>
+
+<table border="1" cellpadding="6" style="width:100%; margin-top:15px; border-collapse: collapse;">
+  <tr><th>Employee</th><th>Period</th><th>Rating</th><th>Goals</th><th>Feedback</th><th>Status</th><th>Action</th></tr>
+  <tr *ngFor="let r of reviews">
+    <td>{{r.employee?.firstName}} {{r.employee?.lastName}}</td><td>{{r.period}}</td><td>{{r.rating}}</td><td>{{r.goals}}</td><td>{{r.feedback}}</td><td>{{r.status}}</td>
+    <td><button (click)="update(r.id, 'COMPLETED')">Complete</button></td>
+  </tr>
+</table>
