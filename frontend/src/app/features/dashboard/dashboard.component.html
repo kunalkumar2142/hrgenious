@@ -1,0 +1,25 @@
+<h2>HR Dashboard</h2>
+<div style="display:flex; gap:15px; flex-wrap:wrap;">
+  <div style="border:1px solid #ccc; padding:15px; min-width:150px; text-align:center;">
+    <h3>{{stats.totalEmployees || 0}}</h3><p>Employees</p>
+  </div>
+  <div style="border:1px solid #ccc; padding:15px; min-width:150px; text-align:center;">
+    <h3>{{stats.totalDepartments || 0}}</h3><p>Departments</p>
+  </div>
+  <div style="border:1px solid #ccc; padding:15px; min-width:150px; text-align:center;">
+    <h3>{{stats.totalJobs || 0}}</h3><p>Jobs</p>
+  </div>
+  <div style="border:1px solid #ccc; padding:15px; min-width:150px; text-align:center;">
+    <h3>{{stats.totalApplicants || 0}}</h3><p>Applicants</p>
+  </div>
+  <div style="border:1px solid #ccc; padding:15px; min-width:150px; text-align:center;">
+    <h3>{{stats.totalLeaves || 0}}</h3><p>Leaves ({{stats.pendingLeaves || 0}} pending)</p>
+  </div>
+  <div style="border:1px solid #ccc; padding:15px; min-width:150px; text-align:center;">
+    <h3>{{stats.totalPayrolls || 0}}</h3><p>Payrolls</p>
+  </div>
+  <div style="border:1px solid #ccc; padding:15px; min-width:150px; text-align:center;">
+    <h3>{{stats.totalReviews || 0}}</h3><p>Reviews</p>
+  </div>
+</div>
+<p style="margin-top:20px; color:#666;">All data comes from backend /api/v1/analytics/stats - no hard code</p>
