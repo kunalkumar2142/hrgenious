@@ -39,5 +39,17 @@ ng serve --port 4200
 ## API Prefix
 All backend APIs under `/api/v1/*` secured with JWT `Authorization: Bearer <token>`
 
+## Features
+- Login with JWT and role based access
+- Employee and Department management
+- Recruitment (Jobs and Applicants with status)
+- Leave and Attendance
+- Payroll (basic + hra + allowance - deductions)
+- Performance reviews
+- Dashboard with counts
+
+## Routes
+`/`, `/dashboard`, `/employees`, `/recruitment`, `/leave`, `/payroll`, `/performance`, `/auth/login`
+
 ## Git Remote
 https://github.com/kunalkumar2142/hrgenious.git
