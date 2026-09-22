@@ -1,0 +1,4 @@
+body { margin: 0; font-family: Roboto, Arial, sans-serif; }
+a { margin: 0 5px; text-decoration: none; color: #1976d2; }
+input, select { padding: 6px; margin: 4px; }
+button { padding: 6px 12px; margin: 4px; cursor: pointer; }
